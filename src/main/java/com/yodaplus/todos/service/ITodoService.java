@@ -5,7 +5,9 @@ import java.util.Optional;
 
 import javax.validation.Valid;
 
+import com.yodaplus.todos.model.Tag;
 import com.yodaplus.todos.model.Todo;
+import com.yodaplus.todos.model.TodoDTO;
 
 public interface ITodoService {
 
@@ -18,6 +20,11 @@ public interface ITodoService {
 	void updateTodo(@Valid Todo todo);
 
 	void saveTodo(@Valid Todo todo);
+
+	void postponeTodo(String string, String string2);
+
+
+	void addTodo(@Valid TodoDTO tododto, List<Tag> tagList);
 
 
 	

@@ -59,7 +59,7 @@ function increaseValue() {
 		<br>
 		<div class="panel panel-primary">
 			<div class="panel-heading">
-				<h3>List of Todo's</h3>
+				<h3>List of Todo's for </h3>
 			</div>
 			<div class="panel-body">
 				<table class="table table-striped">
@@ -72,13 +72,13 @@ function increaseValue() {
 						</tr>
 					</thead>
 					<tbody>
-						<c:forEach items="${todos}" var="todo">
+						<c:forEach items="${todoList}" var="todo">
 							<tr>
 								<td>${todo.description}</td>
 								<td><fmt:formatDate value="${todo.targetDate}"
 										pattern="dd-MM-yyyy" /></td>
 								<td><c:forEach items="${todo.tags}" var="todotag">
-										<a href="/showTodosForTags?id=${todotag.id }">#${todotag.getTagname()}</a>
+										<a href="/showTodosForTags?id=${todotag.getId() }">#${todotag.getTagname()  }</a>
 									</c:forEach>
 										</td>
 								<td><a type="button" class="btn btn-success"
@@ -96,6 +96,7 @@ function increaseValue() {
 											onclick="increaseValue()" value="Increase Value">+</div>
 										<input type="button" onClick="doAjaxPost()" value="Postpone"/>
 								</div>
+
 							</tr>
 						</c:forEach>
 					</tbody>
